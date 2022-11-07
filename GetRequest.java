@@ -10,13 +10,13 @@ public class GetRequest {
 	@Test
 	void getBooksDetails() {
 		//specify base uri
-		RestAssured.baseURI = "https://rahulshettyacademy.com/angularAppdemo/";
+		RestAssured.baseURI = "https://rahulshettyacademy.com/";
 		
 		//Request object
 		RequestSpecification httpRequest = RestAssured.given();
 	    
 		//Response object
-		Response response =httpRequest.request(Method.GET,"https://rahulshettyacademy.com/Library/GetBook.php?AuthorName=shetty");
+		Response response =httpRequest.request(Method.GET,"/Library/GetBook.php?AuthorName=shetty");
 	     
 		//print response in console window
 		String responseBody = response.getBody().asString();
